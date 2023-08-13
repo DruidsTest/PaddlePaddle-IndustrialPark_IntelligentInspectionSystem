@@ -1,0 +1,185 @@
+2021-04-27 15:23:06,169 - main.py[line:54] - INFO: ------------------------------------
+2021-04-27 15:23:06,169 - main.py[line:55] - INFO: Environment Versions:
+2021-04-27 15:23:06,169 - main.py[line:56] - INFO: - Python: 3.6.13 (default, Feb 20 2021, 21:42:50) 
+[GCC 5.4.0 20160609]
+2021-04-27 15:23:06,169 - main.py[line:57] - INFO: - PyTorch: 1.3.0
+2021-04-27 15:23:06,169 - main.py[line:58] - INFO: - TorchVison: 0.4.1
+2021-04-27 15:23:06,169 - main.py[line:61] - INFO: ------------------------------------
+2021-04-27 15:23:06,169 - main.py[line:62] - INFO: ECO Configurations:
+2021-04-27 15:23:06,169 - main.py[line:64] - INFO: - dataset: UCF12
+2021-04-27 15:23:06,169 - main.py[line:64] - INFO: - modality: RGB
+2021-04-27 15:23:06,169 - main.py[line:64] - INFO: - train_list: /media/hp/085d9636-47e0-4970-96d1-5bf4b5c53b4d/u421/user/cc/dataset/UCF_cut5s_frames/train_split_07.txt
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - val_list: /media/hp/085d9636-47e0-4970-96d1-5bf4b5c53b4d/u421/user/cc/dataset/UCF_cut5s_frames/test_split_03.txt
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - net_model: None
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - net_model2D: None
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - net_modelECO: ./model/ECO_Lite_rgb_model_Kinetics.pth.tar
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - net_model3D: None
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - arch: ECO
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - num_segments: 8
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - consensus_type: avg
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - pretrained_parts: finetune
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - k: 3
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - dropout: 0.6
+2021-04-27 15:23:06,170 - main.py[line:64] - INFO: - loss_type: nll
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - epochs: 60
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - batch_size: 4
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - iter_size: 5
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - lr: 0.001
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - lr_steps: [20, 40]
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - momentum: 0.9
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - weight_decay: 0.0005
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - clip_gradient: None
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - no_partialbn: False
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - nesterov: False
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - num_saturate: 5
+2021-04-27 15:23:06,171 - main.py[line:64] - INFO: - print_freq: 10
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - eval_freq: 5
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - workers: 2
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - resume: 
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - evaluate: False
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - snapshot_pref: ./checkpoint/
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - start_epoch: 0
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - gpus: None
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - flow_prefix: 
+2021-04-27 15:23:06,172 - main.py[line:64] - INFO: - rgb_prefix: 
+2021-04-27 15:23:06,172 - main.py[line:65] - INFO: ------------------------------------
+2021-04-27 15:23:11,524 - main.py[line:119] - INFO: DataParallel(
+  (module): TSN(
+    (base_model): ECO(
+      (conv1_7x7_s2): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3))
+      (conv1_7x7_s2_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1_relu_7x7): ReLU(inplace=True)
+      (pool1_3x3_s2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=True)
+      (conv2_3x3_reduce): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1))
+      (conv2_3x3_reduce_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2_relu_3x3_reduce): ReLU(inplace=True)
+      (conv2_3x3): Conv2d(64, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2_3x3_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2_relu_3x3): ReLU(inplace=True)
+      (pool2_3x3_s2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=True)
+      (inception_3a_1x1): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3a_1x1_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3a_relu_1x1): ReLU(inplace=True)
+      (inception_3a_3x3_reduce): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3a_3x3_reduce_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3a_relu_3x3_reduce): ReLU(inplace=True)
+      (inception_3a_3x3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (inception_3a_3x3_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3a_relu_3x3): ReLU(inplace=True)
+      (inception_3a_double_3x3_reduce): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3a_double_3x3_reduce_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3a_relu_double_3x3_reduce): ReLU(inplace=True)
+      (inception_3a_double_3x3_1): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (inception_3a_double_3x3_1_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3a_relu_double_3x3_1): ReLU(inplace=True)
+      (inception_3a_double_3x3_2): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (inception_3a_double_3x3_2_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3a_relu_double_3x3_2): ReLU(inplace=True)
+      (inception_3a_pool): AvgPool2d(kernel_size=3, stride=1, padding=1)
+      (inception_3a_pool_proj): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3a_pool_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3a_relu_pool_proj): ReLU(inplace=True)
+      (inception_3b_1x1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3b_1x1_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3b_relu_1x1): ReLU(inplace=True)
+      (inception_3b_3x3_reduce): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3b_3x3_reduce_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3b_relu_3x3_reduce): ReLU(inplace=True)
+      (inception_3b_3x3): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (inception_3b_3x3_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3b_relu_3x3): ReLU(inplace=True)
+      (inception_3b_double_3x3_reduce): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3b_double_3x3_reduce_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3b_relu_double_3x3_reduce): ReLU(inplace=True)
+      (inception_3b_double_3x3_1): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (inception_3b_double_3x3_1_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3b_relu_double_3x3_1): ReLU(inplace=True)
+      (inception_3b_double_3x3_2): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (inception_3b_double_3x3_2_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3b_relu_double_3x3_2): ReLU(inplace=True)
+      (inception_3b_pool): AvgPool2d(kernel_size=3, stride=1, padding=1)
+      (inception_3b_pool_proj): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3b_pool_proj_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3b_relu_pool_proj): ReLU(inplace=True)
+      (inception_3c_double_3x3_reduce): Conv2d(320, 64, kernel_size=(1, 1), stride=(1, 1))
+      (inception_3c_double_3x3_reduce_bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3c_relu_double_3x3_reduce): ReLU(inplace=True)
+      (inception_3c_double_3x3_1): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (inception_3c_double_3x3_1_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (inception_3c_relu_double_3x3_1): ReLU(inplace=True)
+      (res3a_2): Conv3d(96, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res3a_bn): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res3a_relu): ReLU(inplace=True)
+      (res3b_1): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res3b_1_bn): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res3b_1_relu): ReLU(inplace=True)
+      (res3b_2): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res3b_bn): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res3b_relu): ReLU(inplace=True)
+      (res4a_1): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+      (res4a_1_bn): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res4a_1_relu): ReLU(inplace=True)
+      (res4a_2): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res4a_down): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+      (res4a_bn): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res4a_relu): ReLU(inplace=True)
+      (res4b_1): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res4b_1_bn): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res4b_1_relu): ReLU(inplace=True)
+      (res4b_2): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res4b_bn): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res4b_relu): ReLU(inplace=True)
+      (res5a_1): Conv3d(256, 512, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+      (res5a_1_bn): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res5a_1_relu): ReLU(inplace=True)
+      (res5a_2): Conv3d(512, 512, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res5a_down): Conv3d(256, 512, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+      (res5a_bn): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res5a_relu): ReLU(inplace=True)
+      (res5b_1): Conv3d(512, 512, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res5b_1_bn): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res5b_1_relu): ReLU(inplace=True)
+      (res5b_2): Conv3d(512, 512, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (res5b_bn): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (res5b_relu): ReLU(inplace=True)
+      (global_pool): AvgPool3d(kernel_size=(2, 7, 7), stride=1, padding=0)
+      (fc_final): Dropout(p=0.6, inplace=False)
+    )
+    (new_fc): Linear(in_features=512, out_features=12, bias=True)
+    (consensus): ConsensusModule()
+  )
+)
+2021-04-27 15:23:11,530 - main.py[line:120] - INFO: finetune
+2021-04-27 15:23:11,530 - main.py[line:322] - INFO: ./model/ECO_Lite_rgb_model_Kinetics.pth.tar
+2021-04-27 15:23:11,530 - main.py[line:323] - INFO: 88888888888888888888888888888888888888888888888888888888888888888888888888888888
+2021-04-27 15:23:12,261 - main.py[line:326] - INFO: => loading model-finetune: './model/ECO_Lite_rgb_model_Kinetics.pth.tar'
+2021-04-27 15:23:12,262 - main.py[line:335] - INFO: **************************************************
+2021-04-27 15:23:12,262 - main.py[line:336] - INFO: Start finetuning ..
+2021-04-27 15:23:12,262 - main.py[line:152] - INFO: ['module.new_fc.weight', 'module.new_fc.bias']
+2021-04-27 15:23:12,262 - main.py[line:153] - INFO: 
+------------------------------------
+2021-04-27 15:23:12,263 - main.py[line:162] - INFO: module.new_fc.weight init as: xavier
+2021-04-27 15:23:12,263 - main.py[line:165] - INFO: module.new_fc.bias init as: 0
+2021-04-27 15:23:12,263 - main.py[line:168] - INFO: ------------------------------------
+2021-04-27 15:23:12,319 - main.py[line:229] - INFO: group: first_3d_conv_weight has 1 params, lr_mult: 1, decay_mult: 1
+2021-04-27 15:23:12,319 - main.py[line:229] - INFO: group: first_3d_conv_bias has 1 params, lr_mult: 2, decay_mult: 0
+2021-04-27 15:23:12,319 - main.py[line:229] - INFO: group: normal_weight has 32 params, lr_mult: 1, decay_mult: 1
+2021-04-27 15:23:12,319 - main.py[line:229] - INFO: group: normal_bias has 32 params, lr_mult: 2, decay_mult: 0
+2021-04-27 15:23:12,319 - main.py[line:229] - INFO: group: BN scale/shift has 2 params, lr_mult: 1, decay_mult: 0
+2021-04-27 15:23:23,299 - main.py[line:528] - INFO: Epoch: [0][4/1999], lr: 0.0010000	Time 0.17 (2.70)	UTime 2021/04/27-15:23:23 	Data 0.00 (0.37)	Loss 4.334 (2.639)	Prec@1 25.00 (20.00)	Prec@5 50.00 (55.00)
+2021-04-27 15:23:25,438 - main.py[line:528] - INFO: Epoch: [0][9/1999], lr: 0.0010000	Time 0.77 (1.41)	UTime 2021/04/27-15:23:25 	Data 0.30 (0.34)	Loss 2.780 (2.154)	Prec@1 0.00 (15.00)	Prec@5 75.00 (60.00)
+2021-04-27 15:23:28,094 - main.py[line:528] - INFO: Epoch: [0][14/1999], lr: 0.0010000	Time 0.16 (1.06)	UTime 2021/04/27-15:23:27 	Data 0.82 (0.36)	Loss 2.391 (1.956)	Prec@1 0.00 (16.67)	Prec@5 100.00 (63.33)
+2021-04-27 15:23:30,107 - main.py[line:528] - INFO: Epoch: [0][19/1999], lr: 0.0010000	Time 0.80 (0.93)	UTime 2021/04/27-15:23:29 	Data 0.00 (0.34)	Loss 2.140 (1.797)	Prec@1 25.00 (17.50)	Prec@5 50.00 (66.25)
+2021-04-27 15:23:32,599 - main.py[line:528] - INFO: Epoch: [0][24/1999], lr: 0.0010000	Time 0.27 (0.81)	UTime 2021/04/27-15:23:31 	Data 0.68 (0.35)	Loss 2.076 (1.672)	Prec@1 25.00 (19.00)	Prec@5 50.00 (69.00)
+2021-04-27 15:23:34,763 - main.py[line:528] - INFO: Epoch: [0][29/1999], lr: 0.0010000	Time 0.70 (0.77)	UTime 2021/04/27-15:23:34 	Data 0.05 (0.35)	Loss 2.052 (1.587)	Prec@1 0.00 (24.17)	Prec@5 25.00 (69.17)
+2021-04-27 15:23:37,636 - main.py[line:528] - INFO: Epoch: [0][34/1999], lr: 0.0010000	Time 0.53 (0.72)	UTime 2021/04/27-15:23:36 	Data 0.89 (0.36)	Loss 1.736 (1.509)	Prec@1 50.00 (26.43)	Prec@5 100.00 (71.43)
+2021-04-27 15:23:39,586 - main.py[line:528] - INFO: Epoch: [0][39/1999], lr: 0.0010000	Time 0.66 (0.69)	UTime 2021/04/27-15:23:39 	Data 0.00 (0.35)	Loss 2.812 (1.514)	Prec@1 25.00 (26.88)	Prec@5 50.00 (70.62)
+2021-04-27 15:23:42,104 - main.py[line:528] - INFO: Epoch: [0][44/1999], lr: 0.0010000	Time 0.26 (0.66)	UTime 2021/04/27-15:23:41 	Data 0.54 (0.35)	Loss 2.224 (1.505)	Prec@1 50.00 (28.33)	Prec@5 50.00 (70.00)
+2021-04-27 15:23:44,589 - main.py[line:528] - INFO: Epoch: [0][49/1999], lr: 0.0010000	Time 0.61 (0.65)	UTime 2021/04/27-15:23:44 	Data 0.15 (0.36)	Loss 2.182 (1.480)	Prec@1 25.00 (29.00)	Prec@5 50.00 (69.50)
+2021-04-27 15:23:46,641 - main.py[line:528] - INFO: Epoch: [0][54/1999], lr: 0.0010000	Time 0.47 (0.63)	UTime 2021/04/27-15:23:46 	Data 0.19 (0.35)	Loss 2.136 (1.468)	Prec@1 75.00 (30.00)	Prec@5 75.00 (70.00)
+2021-04-27 15:23:49,092 - main.py[line:528] - INFO: Epoch: [0][59/1999], lr: 0.0010000	Time 0.43 (0.61)	UTime 2021/04/27-15:23:48 	Data 0.46 (0.36)	Loss 2.207 (1.456)	Prec@1 25.00 (30.00)	Prec@5 75.00 (70.42)
+2021-04-27 15:23:51,158 - main.py[line:528] - INFO: Epoch: [0][64/1999], lr: 0.0010000	Time 0.18 (0.60)	UTime 2021/04/27-15:23:50 	Data 0.42 (0.35)	Loss 2.016 (1.434)	Prec@1 50.00 (31.15)	Prec@5 100.00 (71.54)
+2021-04-27 15:23:53,681 - main.py[line:528] - INFO: Epoch: [0][69/1999], lr: 0.0010000	Time 1.00 (0.59)	UTime 2021/04/27-15:23:53 	Data 0.37 (0.36)	Loss 2.421 (1.431)	Prec@1 25.00 (32.14)	Prec@5 100.00 (72.14)
+2021-04-27 15:23:56,277 - main.py[line:528] - INFO: Epoch: [0][74/1999], lr: 0.0010000	Time 0.56 (0.59)	UTime 2021/04/27-15:23:56 	Data 0.00 (0.36)	Loss 4.930 (1.523)	Prec@1 0.00 (30.67)	Prec@5 50.00 (71.00)
+2021-04-27 15:23:59,260 - main.py[line:528] - INFO: Epoch: [0][79/1999], lr: 0.0010000	Time 0.16 (0.58)	UTime 2021/04/27-15:23:58 	Data 0.62 (0.36)	Loss 4.706 (1.589)	Prec@1 25.00 (30.94)	Prec@5 50.00 (70.00)
+2021-04-27 15:24:01,521 - main.py[line:528] - INFO: Epoch: [0][84/1999], lr: 0.0010000	Time 0.64 (0.58)	UTime 2021/04/27-15:24:01 	Data 0.00 (0.36)	Loss 1.969 (1.565)	Prec@1 50.00 (31.18)	Prec@5 100.00 (70.59)
